@@ -50,3 +50,8 @@ Read this as: A is friends with B and C, B is friends with A and C, C is friends
 Read this as: A and B have C in common as a friend. None of the other relationships have common friends.
 
 Your mapper stage should take each line of the friend graph and produce a list of relationships (i.e. `A|B,C` -> `(A,B): B, C`, `(A,C): B, C`). The reducer phase should take all of these relationships and output common friends for each pair. (Hint: Lookup set intersection)
+
+##Submission
+Lab 1 is due on Thursday, Febuary 2nd, 2017 at 11:55PM.
+
+Please zip the files and upload it to Moodle (learn.illinois.edu).
