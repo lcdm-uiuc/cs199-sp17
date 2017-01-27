@@ -26,12 +26,19 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 
 ##Tentative list of Topics
 1) Understand motivation behind cloud computing
+
 2) Building a Hadoop cluster.
+
 3) Building a Spark cluster.
+
 4) Text Analytics at scale
+
 5) Graph Analytics at scale
+
 6) Spark Analysis
+
 7) NoSQL Data Stores (installation and operation).
+
 8) Writing Technical Reports.
 
 ##Common Errors
