@@ -35,21 +35,29 @@ Suppose we’re running a social network and we want a fast way to calculate a l
 You’ll be given a friend ‘graph’ that looks like this:
 
 ```
-A|B,C
+A|B
 B|A,C
-C|A,B
+C|B
 ```
 
-Read this as: A is friends with B and C, B is friends with A and C, and C is friends with A and B. Our desired output is as follows:
+Read this as: A is friends with B, B is friends with A and C, and C is friends with B. Our desired output is as follows:
 
 ```
-(A, B) [C]
-(B, C) [A]
-(C, A) [B]
+(A, B) []
+(A, C) [B]
+(C, B) []
 ```
-Read this as: A and B have C in common as a friend, B and C have A in common as a friend, C and A have B in common as a friend.
+Read this as: A and C have B in common as a friend. None of the other relationships have common friends.
 
-Your mapper stage should take each line of the friend graph and produce a list of relationships (i.e. `A|B,C` -> `(A,B): B, C`, `(A,C): B, C`). The reducer phase should take all of these relationships and output common friends for each pair. (Hint: Lookup set intersection)
+Your mapper stage should take each line of the friend graph and produce a list of relationships:
+
+`A|B` -> `(A,B): A, B` 
+
+`B|A,C` -> `(B,A): A, C`, `(B,C): A, C`
+
+`C|B` -> `(C,B): C, B`
+
+The reducer phase should take all of these relationships and output common friends for each pair. (Hint: Lookup set intersection)
 
 ##Submission
 Lab 1 is due on Thursday, Febuary 2nd, 2017 at 11:55PM.
