@@ -32,14 +32,17 @@ Note: For the purposes of this exercise, we’ll only consider bigrams that occu
 
 Suppose we’re running a social network and we want a fast way to calculate a list of common friends for pairs of users in our site. This can be done fairly easily with a map/reduce procedure.
 
-You’ll be given a friend ‘graph’ that looks like this:
+You’ll be given input of a friend ‘graph’ that looks like this:
 
 ```
 A|B
 B|A,C
 C|B
 ```
-
+The graph can be visualized as
+``` 
+A-B-C 
+```
 Read this as: A is friends with B, B is friends with A and C, and C is friends with B. Our desired output is as follows:
 
 ```
