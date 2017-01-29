@@ -37,17 +37,17 @@ You’ll be given a friend ‘graph’ that looks like this:
 ```
 A|B,C
 B|A,C
-C|A
+C|A,B
 ```
 
-Read this as: A is friends with B and C, B is friends with A and C, C is friends with A. Our desired output is as follows:
+Read this as: A is friends with B and C, B is friends with A and C, and C is friends with A and B. Our desired output is as follows:
 
 ```
 (A, B) [C]
-(B, C) []
-(C, A) []
+(B, C) [A]
+(C, A) [B]
 ```
-Read this as: A and B have C in common as a friend. None of the other relationships have common friends.
+Read this as: A and B have C in common as a friend, B and C have A in common as a friend, C and A have B in common as a friend.
 
 Your mapper stage should take each line of the friend graph and produce a list of relationships (i.e. `A|B,C` -> `(A,B): B, C`, `(A,C): B, C`). The reducer phase should take all of these relationships and output common friends for each pair. (Hint: Lookup set intersection)
 
