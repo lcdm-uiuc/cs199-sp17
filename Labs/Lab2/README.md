@@ -35,7 +35,7 @@ map program generates a list of word tokens as the keys and the value is
 always one.
 
 ```python
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 # These examples are based off the blog post by Michale Noll:
 # 
@@ -80,7 +80,7 @@ tracking when the current word becomes different than the previous word
 to output the key-cumulative count pairs.
 
 ```python
-#!/usr/bin/env python3
+#!/usr/bin/python
 
 import sys
 
