@@ -361,7 +361,7 @@ Hadoop, and this can also be verified by listing the contents of the
 `wc` directory.
 
 ```sh
-hdfs dfs -r -f wc/out
+hdfs dfs -ls wc
 ```
 
 ### Student Activity
