@@ -364,15 +364,18 @@ Hadoop, and this can also be verified by listing the contents of the
 hdfs dfs -ls wc
 ```
 
-### Student Activity
+## Lab Assignment
+
+Lab 2 is due on Thursday, Febuary 9nd, 2017 at 11:55PM.
+Please zip your source files for the following exersizes and upload it to Moodle (learn.illinois.edu).
+
 
 In the preceding cells, we introduced Hadoop map/reduce by using a
 simple word count task. Now that you have run the lab, go back and
 make the following changes to see how the results change.
 
 1. We ignored punctuation, modify the original mapper Python code to
-token on white space or punctuation. How does this change the Python
-map-reduce output?
-2. Try downloading a different text from Project Gutenberg. Can you make your map-reduce application run across multiple texts?
-3. Can you make your map-reduce code compute bi-grams instead of
-unigrams?
+token on white space or punctuation.
+2. Try downloading a different text from Project Gutenberg. Write a map-reduce application that can run across multiple texts.
+3. Write a map-reduce application to compute bi-grams instead of
+unigrams (combinations of two adjacent words as they appear in the text)

@@ -4,17 +4,17 @@
 
 <b>Course Staffs</b>:
 
-- Benjamin Congdon (@bcongdon)
+- Benjamin Congdon, [@bcongdon](https://github.com/bcongdon)
 
-- Drake Eidukas (@drake-eidukas)
+- Drake Eidukas, [@drake-eidukas](https://github.com/)
 
-- Quinn Jarrell (@TheRushingWookie)
+- Quinn Jarrell, [@TheRushingWookie](https://github.com/TheRushingWookie)
 
-- Tyler Kim (@tyler-thetyrant)
+- Tyler Kim, [@tyler-thetyrant](https://github.com/tyler-thetyrant)
 
-- Sameet Sapra (@sameetandpotatoes)
+- Sameet Sapra, [@sameetandpotatoes](https://github.com/sameetandpotatoes)
 
-- Bhuvan Venkatesh (@bhuvan-venkatesh)
+- Bhuvan Venkatesh, [@bhuvan-venkatesh](https://github.com/bhuvan-venkatesh)
 
 ##Overview
 This course will introduce cloud computing with an emphasis on gaining hands-on experience in implementing big data technologies in a cloud computing environment. Students will be expected to work in small groups to develop and implement specific cloud computing solutions and to create technical reports that document these solutions and technologies.
@@ -48,3 +48,8 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 
 * SSH
 `ssh user@localhost -p 2222`
+
+
+
+## License
+This course is licensed under the University of Illinois/NCSA Open Source License. For a full copy of this license take a look at the LICENSE file.
