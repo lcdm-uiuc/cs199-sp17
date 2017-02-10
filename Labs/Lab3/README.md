@@ -42,7 +42,7 @@ Example:
 ```
 	
 ## Lab Activities
-**Lab 2 is due on Thursday, Febuary 16nd, 2017 at 11:55PM.**
+**Lab 3 is due on Thursday, Febuary 16nd, 2017 at 11:55PM.**
 
 Please zip your source files for the following exercises and upload it to Moodle (learn.illinois.edu).
 
