@@ -1,6 +1,0 @@
-A|B,D,E,F
-B|A,C,E
-C|B,F
-D|A,E
-E|A,B,D
-F|A,C
