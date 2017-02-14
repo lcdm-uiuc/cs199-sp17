@@ -41,6 +41,40 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 
 8) Writing Technical Reports.
 
+
+##Grading
+
+| **Grading Item**      | **Distribution** |
+| --------------------- | -------------- |
+| Attendance            | 10%            |
+| Labs                  | 30%            |
+| Technical Report      | 60%            |
+
+
+##Grading Scale
+| Percentage | Letter Grade |
+| ---------- | ------------ |
+| [98, 100]     | A+           |
+| [92, 98)      | A            |
+| [90, 92)      | A-           |
+| [88, 90)      | B+           |
+| [82, 88)      | B            |
+| [80, 82)      | B-           |
+| [78, 80)      | C+           |
+| [72, 78)      | C            |
+| [70, 72)      | C-           |
+| [68, 70)      | D+           |
+| [62, 68)     | D            |
+| [60, 62)      | D-           |
+| Below 60   | F            |
+
+
+##Labs and Late Submission
+There will be about six to seven labs throughout the course, responsible for 30% of the total grade.
+
+No late submission will be allowed unless you have received permission from a course staff ahead of time under special circumstances.
+
+
 ##Common Errors
 * If you reboot your VM, you WILL NEED TO REMOUNT THE SHARED FOLDER
 
