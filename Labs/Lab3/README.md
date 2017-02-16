@@ -46,7 +46,9 @@ Example:
 
 Please zip your source files for the following exercises and upload it to Moodle (learn.illinois.edu).
 
-**NOTE:** Place your Hadoop output in your HDFS home directory under the folder `~/twitter/`. (i.e. Problem 1 output should map to `~/twitter/
+**NOTE:** Place your Hadoop output in your HDFS home directory under the folder `~/twitter/`. (i.e. Problem 1 output should map to `~/twitter/`
+
+**EDIT:** Due to resource constraints on the cluster, please run your map/reduce jobs on only 1 twitter file (`tweets2009-06.tsv`). If you've already run your code on the whole dataset, that is fine.
 
 1. Write a map/reduce program to determine the the number of @ replies each user received.
 2. Write a map/reduce program to determine the user with the most Tweets for every given day in the dataset. (If there's a tie, break the tie by sorting alphabetically on users' handles)
