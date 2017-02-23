@@ -6,9 +6,60 @@ As we have talked about in lecture, Spark is built on what's called a Resilient 
 
 PySpark allows us to interface with these RDD’s in Python. Think of it as an API. In fact, it is an API; it even has its own [documentation](http://spark.apache.org/docs/latest/api/python/)! It’s built on top of the Spark’s Java API and exposes the Spark programming model to Python.
 
+
 PySpark makes use of a library called `Py4J`, which enables Python programs to dynamically access Java objects in a Java Virtual Machine.
 
 This allows data to be processed in Python and cached in the JVM.
+
+
+## Running your Jobs
+
+We'll be using `spark-submit` to run our spark jobs on the cluster. `spark-submit` has a couple command line options that you can tweak.
+
+#### `--master`
+This option tells `spark-submit` where to run your job, as spark can run in several modes.
+
+* `local`
+    * The spark job runs locally, without using any compute resources from the cluster.
+* `yarn-client`
+    * The spark job runs on our YARN cluster, but the driver is local to the machine, so it 'appears' that you're running the job locally, but you still get the compute resources from the cluster. You'll see the logs spark provides as the program executes.
+    * When the cluster is busy, you *will not* be able to use this mode, because it imposes too much of a memory footprint.
+* `yarn-cluster`
+    * The spark job runs on our YARN cluster, and the spark driver is in some arbitrary location on the cluster. This option doesn't give you logs directly, so you'll have to get the logs manually.
+    * In the output of `spark-submit --master yarn-cluster` you'll find an `applicationId`. (This is similar to when you ran jobs on Hadoop). You can issue this command to get the logs for your job:
+
+        ```
+        yarn logs -applicationId <YOUR_APPLICATION_ID> | less
+        ```
+    * When debugging Python applications, it's useful to `grep` for `Traceback` in your logs, as this will likely be the actual debug information you're looking for.
+
+        ```
+        yarn logs -applicationId <YOUR_APPLICATION_ID> | grep -A 50 Traceback
+        ```
+
+#### `--num-executors`
+This option lets you set the number of executors that your job will have. A good rule of thumb is to have as many executors as the maximum number of partitions an RDD will have during a Spark job (this heuristic holds better for simple jobs, but falls apart as the complexity of your job increases).
+
+The number of executors is a tradeoff. Too few, and you might not be taking full advantage of Sparks parallelism. However, there is also an upper bound on the number of executors (for obvious reasons), as they have a fairly large memory footprint. (Don't set this too high or we'll terminate your job.)
+
+You can tweak executors more granularly by setting the amount of memory and number of cores they're allocated, but for our purposes the default values are sufficient.
+
+### Putting it all together
+
+Submitting a spark job will ususally look something like this:
+
+```
+spark-submit --master yarn-cluster --num-executors 10 MY_PYTHON_FILE.py
+```
+
+Be sure to include the `--master` flag, or else your code will only run locally, and you won't get the benefits of the cluster's parallelism.
+
+### Helpful Hints
+
+* You'll find the [PySpark documentation](https://spark.apache.org/docs/2.0.0/api/python/pyspark.html#pyspark.RDD) (especially the section on RDDs) very useful.
+* Run your Spark jobs on a subset of the data when you're debugging. Even though Spark is very fast, jobs can still take a long time - especially when you're working with the review dataset. When you are experimenting, always use a subset of the data. The best way to use a subset of data is through the [take](https://spark.apache.org/docs/1.6.2/api/java/org/apache/spark/rdd/RDD.html#take(int)) command.
+* [Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html) -- This documentation by itself could be used to solve the entire lab. It is a great quickstart guide about Spark.
+
 
 ## The Dataset
 
@@ -102,16 +153,3 @@ Notes:
 * Your output should be as follows, where `probability_diff` is `P(negative) - P(positive)` rounded to **5** decimal places and sorted in descending order:
 
 	`word: probability_diff`
-
-## Running your Jobs
-
-```
-spark-submit --master yarn-client MY_PYTHON_FILE.py
-```
-
-Be sure to include the `--master` flag, or else your code will only run locally, and you won't get the benefits of the cluster's parallelism.
-
-### Helpful Hints
-
-* You'll find the [PySpark documentation](https://spark.apache.org/docs/2.0.0/api/python/pyspark.html#pyspark.RDD) (especially the section on RDDs) very useful.
-* Run your Spark jobs on a subset of the data when you're debugging. Even though Spark is very fast, jobs can still take a long time - especially when you're working with the review dataset.
