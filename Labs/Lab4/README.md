@@ -36,6 +36,12 @@ This option tells `spark-submit` where to run your job, as spark can run in seve
         ```
         yarn logs -applicationId <YOUR_APPLICATION_ID> | grep -A 50 Traceback
         ```
+        
+    * *NOTE*: In cluster mode, normal IO operations like opening files will behave unexpectedly! This is because you're not guaranteed which node the driver will run on. You must use the PySpark API for saving files to get reliable results. You also have to coalesce your RDD into one partition before asking PySpark to write to a file (why do you think this is?). Additionally, you should save your results to HDFS.
+
+        ```python
+        <my_rdd>.coalesce(1).saveAsTextFile('hdfs:///user/MY_USERNAME/foo')
+        ```
 
 #### `--num-executors`
 This option lets you set the number of executors that your job will have. A good rule of thumb is to have as many executors as the maximum number of partitions an RDD will have during a Spark job (this heuristic holds better for simple jobs, but falls apart as the complexity of your job increases).
