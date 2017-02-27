@@ -85,7 +85,7 @@ We'll give more details about the data in these files as we continue with the la
 *Hint:* JSON is parsed with `json.loads`
 
 ## Lab Activities
-**Lab 4 is due on Thursday, March 3rd, 2017 at 11:55PM.**
+**Lab 4 is due on Thursday, March 2nd, 2017 at 11:55PM.**
 
 Please zip your source files **and your output text files** for the following exercises and upload it to Moodle (learn.illinois.edu).
 
