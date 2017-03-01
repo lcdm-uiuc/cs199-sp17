@@ -70,7 +70,14 @@ Note: If you start up the normal `python` interpreter, you probably won't be abl
 
 * You'll find the [PySpark documentation](https://spark.apache.org/docs/2.0.0/api/python/pyspark.html#pyspark.RDD) (especially the section on RDDs) very useful.
 * Run your Spark jobs on a subset of the data when you're debugging. Even though Spark is very fast, jobs can still take a long time - especially when you're working with the review dataset. When you are experimenting, always use a subset of the data. The best way to use a subset of data is through the [take](https://spark.apache.org/docs/1.6.2/api/java/org/apache/spark/rdd/RDD.html#take(int)) command.
+
+Specifically the most common pattern to sample data looks like
+`rdd = sc.parallelize(rdd.take(100))`
+This converts an rdd into a list of 100 items and then back into an rdd through the parallelize function.
+
 * [Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html) -- This documentation by itself could be used to solve the entire lab. It is a great quickstart guide about Spark.
+
+
 
 
 ## The Dataset
@@ -109,7 +116,7 @@ Notes:
 * Discard any business that does not have a valid city and state
 * Your output should be sorted descending by average price (highest at top, lowest at bottom). Your average restaurant price should be rounded to 2 decimal places. Each city should get a row in the output and look like:
 
-	`CITY, STATE: PRICE`
+    `CITY, STATE: PRICE`
 
 ### 2. Up All Night
 
@@ -123,8 +130,8 @@ Notes:
 * Discard any invalid times (some business have `DAY 0:0-0:0` as their hours, which we consider to be invalid), and for simplicities sake, assume that all businesses close before midnight.
 * Use the **median** closing time of businesses in each city as the "city closing time". If you have to tie break (i.e. `num_business_hours % 2 == 1`), choose the lower of the two so you can avoid doing datetime math
 * Your output should be in the following format, with median closing time in `HH:MM` (24 hour clock) format and should be sorted descending by time (latest cities first).
-	
-	`CITY, STATE: HH:MM`
+    
+    `CITY, STATE: HH:MM`
 
 ### 3. Pessimistic Yelp Reviewers
 
@@ -164,4 +171,4 @@ Notes:
 * Consider a review to be positive if it has >=3 stars, and consider a review negative if it has <3 stars.
 * Your output should be as follows, where `probability_diff` is `P(negative) - P(positive)` rounded to **5** decimal places and sorted in descending order:
 
-	`word: probability_diff`
+    `word: probability_diff`
