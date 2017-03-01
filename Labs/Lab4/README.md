@@ -60,6 +60,12 @@ spark-submit --master yarn-cluster --num-executors 10 MY_PYTHON_FILE.py
 
 Be sure to include the `--master` flag, or else your code will only run locally, and you won't get the benefits of the cluster's parallelism.
 
+### Interactive Shell
+
+While `spark-submit` is the way we'll be endorsing to run PySpark jobs, there is an option to run jobs in an interactive shell. Use the `pyspark` command to load into the PySpark interactive shell. You can use many of the same options listed above to tweak `pyspark` settings, such as `--num-executors` and `--master`.
+
+Note: If you start up the normal `python` interpreter, you probably won't be able to use any of the PySpark features.
+
 ### Helpful Hints
 
 * You'll find the [PySpark documentation](https://spark.apache.org/docs/2.0.0/api/python/pyspark.html#pyspark.RDD) (especially the section on RDDs) very useful.
