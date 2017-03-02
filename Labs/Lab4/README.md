@@ -60,6 +60,11 @@ spark-submit --master yarn-cluster --num-executors 10 MY_PYTHON_FILE.py
 
 Be sure to include the `--master` flag, or else your code will only run locally, and you won't get the benefits of the cluster's parallelism.
 
+You can track the progress of your application by looking running this command
+`ssh -L 127.0.0.1:9002:192-168-100-234.local:18080 username@141.142.210.245`
+
+where username is your username. Then look at http://127.0.0.1:9002 . If you scroll to the bottom and click Show incomplete applications, you can see the current progress of your script
+
 ### Interactive Shell
 
 While `spark-submit` is the way we'll be endorsing to run PySpark jobs, there is an option to run jobs in an interactive shell. Use the `pyspark` command to load into the PySpark interactive shell. You can use many of the same options listed above to tweak `pyspark` settings, such as `--num-executors` and `--master`.
