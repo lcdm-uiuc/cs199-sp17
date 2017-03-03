@@ -1,4 +1,4 @@
-# Lab 4: Spark MLlib
+# Lab 5: Spark MLlib
 
 ## Introduction
 
