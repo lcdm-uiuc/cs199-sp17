@@ -15,9 +15,10 @@ We'll be considering 3 types of machine learning in the lab this week:
 However, for most of the algoritms / feature extractors that MLlib provides, there is a common pattern:
 
 1) Fit - Trains the model, using training data to adjust the model's internal parameters.
+
 2) Transform - Use the fitted model to predict the label/value of novel data (data not used in the traning of the model).
 
-If you go on to do more data science work, you'll probably encounter that this 3 step ML pattern is common in other ML libraries, like `scikit-learn`.
+If you go on to do more data science work, you'll see that this 2-phase ML pattern is common in other ML libraries, like `scikit-learn`.
 
 Things are a bit more complicated in PySpark, because part of the way RDDs are handled (i.e. lazy evaluation), we often have to explicitly note when we want to predict data, and other instances when we're piping data through different steps of our model's setup.
 
