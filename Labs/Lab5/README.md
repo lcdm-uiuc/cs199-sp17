@@ -202,7 +202,7 @@ Construct and train a model that uses a regression algorithm to predict a review
 Notes:
 
 * You can use the any fields other than `Score` for feature extraction.
-* We suggest that at for a starting point, you use `pyspark.mllib.classification.SVMWithSGD` as your regression model.
+* We suggest that at for a starting point, you use `pyspark.mllib.regression.LinearRegressionWithSGD` as your regression model.
 * Use `pyspark.mllib.evaluation.RegressionMetrics` to output the `explainedVariance` and `rootMeanSquaredError`. You want to minimize the error.
 * Use `MulticlassMetrics` to output the `confusionMatrix` and `precision` of your model. You want to maximize the precision. Include this output in your submission.
 
