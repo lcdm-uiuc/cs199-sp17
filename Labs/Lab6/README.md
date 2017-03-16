@@ -120,9 +120,10 @@ There are some times that we need to access data that is split accross multiple 
 You'll want to look up the JOIN (specifically INNER JOIN) SQL commands for these problems.
 
 Queries:
-1) What state has had the most Yelp check-ins?
-2) What is the maximum number of "funny" ratings left on a review created by someone who's been yelping since 2012?
-3) List the user ids of anyone who has left a 1-star review, has created more than 250 reviews, and has left a review in Champaign, IL.
+
+1. What state has had the most Yelp check-ins?
+2. What is the maximum number of "funny" ratings left on a review created by someone who's been yelping since 2012?
+3. List the user ids of anyone who has left a 1-star review, has created more than 250 reviews, and has left a review in Champaign, IL.
 
 Notes: 
 
