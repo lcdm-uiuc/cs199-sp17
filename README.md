@@ -1,12 +1,10 @@
-#CS199: Applied Cloud Computing
+# CS199: Applied Cloud Computing
 
 <b>Professor</b>: Dr. Robert J. Brunner
 
 <b>Course Staffs</b>:
 
 - Benjamin Congdon, [@bcongdon](https://github.com/bcongdon)
-
-- Drake Eidukas, [@drake-eidukas](https://github.com/)
 
 - Quinn Jarrell, [@TheRushingWookie](https://github.com/TheRushingWookie)
 
@@ -16,15 +14,15 @@
 
 - Bhuvan Venkatesh, [@bhuvan-venkatesh](https://github.com/bhuvan-venkatesh)
 
-##Overview
+## Overview
 This course will introduce cloud computing with an emphasis on gaining hands-on experience in implementing big data technologies in a cloud computing environment. Students will be expected to work in small groups to develop and implement specific cloud computing solutions and to create technical reports that document these solutions and technologies.
 
 This course is intended for underclassmen in CS and ECE.
 
-##Prerequisites
+## Prerequisites
 Grade A- or higher in CS125. Previous experience in python programming is required.
 
-##Tentative list of Topics
+## Tentative list of Topics
 1) Understand motivation behind cloud computing
 
 2) Building a Hadoop cluster.
@@ -42,7 +40,7 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 8) Writing Technical Reports.
 
 
-##Grading
+## Grading
 
 | **Grading Item**      | **Distribution** |
 | --------------------- | -------------- |
@@ -51,7 +49,7 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 | Technical Report      | 60%            |
 
 
-##Grading Scale
+## Grading Scale
 | Percentage | Letter Grade |
 | ---------- | ------------ |
 | [98, 100]     | A+           |
@@ -69,13 +67,13 @@ Grade A- or higher in CS125. Previous experience in python programming is requir
 | Below 60   | F            |
 
 
-##Labs and Late Submission
+## Labs and Late Submission
 There will be about six to seven labs throughout the course, responsible for 30% of the total grade.
 
 No late submission will be allowed unless you have received permission from a course staff ahead of time under special circumstances.
 
 
-##Common Errors
+## Common Errors
 * If you reboot your VM, you WILL NEED TO REMOUNT THE SHARED FOLDER
 
 `sudo mount -t vboxsf -o rw,uid=1000,gid=1000 NAMEOFYOURSHAREDFOLDERONHOST NAMEOFFOLDERONVMTOSHARETO`
